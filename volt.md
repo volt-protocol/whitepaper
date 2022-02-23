@@ -54,7 +54,7 @@ There will be a total of 1 billion VCON tokens created at launch. Of this supply
     *  6% given to OlympusDAO in exchange for participation in the Olympus incubator and onboarding VOLT as a treasury asset
     *  6% offered to Frax protocol as a token swap in recognition of our joint efforts coordinating on a CPI index
 * 18% reserved in protocol treasury for token incentives or bonds
-    *  1% used for VOLT liquidity incentives over the first 3 months
+    *  0.5% used for VOLT liquidity incentives over the first month after LBP, reassess based on results of this program
 * 10% issued in LBP to efficiently bootstrap VCON market
 
 ## Direct Decentralization Through DAO Partners
@@ -77,6 +77,8 @@ This system will allow a market process to govern how VOLT and other PCV assets 
 
 # Launch Plans
 
+The VOLT issuance system will be launched prior to the existence of the VCON governance token. In this early stage, it will be governed by the Volt DAO multisig, subject to a timelock and with veto power assigned to a Guardian (either the TRIBE Nope DAO or the Fei Labs Guardian). Users will be able to borrow VOLT on Fuse, and the PSM will start with 0 VOLT available for issuance and increase continuously based on the rate set by governance. The system will be live for 1-4 weeks before the LBP, giving users a chance to try it out. Before incentives launch, we expect most VOLT issuance will be through the PSM and VOLT price on secondary markets may be volatile.
+
 The VCON governance token will be launched in a liquid balancer pool (LBP), a mechanism for on chain price discovery of a new token. The LBP will be seeded with VCON governance tokens and protocol controlled FEI. The LBP determines what the starting price of the VCON token is at launch. This VCON/FEI liquidity will remain permanently as PCV.
 
-After the LBP, there will be VCON incentives available for both VCON/FEI LPs and VOLT LP pairs. 
+After the LBP, there will be VCON incentives available for both VCON/FEI LPs and G-UNI VOLT/FEI LP pairs. Effectively, incentives on liquidity are a continuous token sale, and contribute to increasing the size of the system surplus.
