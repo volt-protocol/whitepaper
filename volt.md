@@ -23,13 +23,15 @@ All VOLT will be backed by yield sources offering returns greater than inflation
 VOLT will be issued through a Peg Stability Module (PSM) which will allow users to either mint or redeem VOLT at the current target price reported by the Volt Price Oracle in exchange for accepted stablecoins. These will be immediately deployed into whitelisted yield venues that offer returns greater than or equal to the prevailing inflation rate. Likewise, when a user wishes to exchange their VOLT for stablecoins, they can always swap at the PSM at VOLT's target price. Stablecoins are withdrawn from the yield venues and given to the user in exchange for VOLT.
 
 At launch the protocol will support the following stablecoins and yield venues:
-* Liquity LUSD, deposited into the Yearn LUSD vault to be staked in the LUSD stability pool
 * Fei Protocol FEI, deposited into either Fuse pool 8 (FeiRari DAO Pool) or Fuse pool 156
 
 The PSM will charge a fee on VOLT issuance, with no fee on redemption. At launch the fee will be larger and compensated with VCON incentives. Later, the fee can be reduced. The assessment of a fee provides a buffer backing VOLT price.
 
 ## VOLT Lending
 In addition to the PSM, we will issue VOLT directly through supported Fuse pools. At launch, there will be a "base" Volt DAO Fuse pool that allocates VOLT to other pools through plugins. The VOLT issuance pool will use the VOLT Price Oracle rather than market price data for the purposes of lending and liquidations. This means that borrowers are safe from being liquidated due to excess VOLT demand.
+
+At launch, we will support the following Fuse pools:
+* pool 8 (FeiRari DAO pool) 
 
 # Monetary Policy
 The VCON DAO is responsible for earning yield equal to or greater than inflation on protocol assets, with the goal of increasing the buffer of VOLT's backing over time. Our goal is to preserve purchasing power over the long term, so the protocol will take a conservative approach in whitelisitng yield venues.
@@ -59,6 +61,7 @@ There will be a total of 1 billion VCON tokens created at launch. Of this supply
 
 Volt Protocol has been developed in partnership with the Fei / Rari Tribe. Along with the support of our other partners including OlympusDAO and Frax, we're decentralizing VOLT by distributing VCON to existing token communities. At launch, the protocol will be governed by the Control Multisig currently consisting of Volt Protocol founder Kirk Hutchison, Fei Protocol founder Joey Santoro, Frax Finance founder Sam Kazemian, OlympusDAO representative Glueeater, and Gabagool.eth, a well regarded investor and community member. This multisig will perform protocol governance at launch, remaining answerable to the partner DAOs who control the largest stakes in Volt.
 
+
 ## Liquid Governance
 
 The goal of the VCON governance system is to let tokenholders *directly* allocate protocol assets and make other governance decisions, while having the proper skin in the game. That means that they benefit or suffer most from their *individual* governance decisions, not the result of majority consensus. We accomplish this with a special lending pool for VCON holders, based on the Tribe TURBO system.
@@ -74,4 +77,6 @@ This system will allow a market process to govern how VOLT and other PCV assets 
 
 # Launch Plans
 
-The VCON governance token will be launched in a liquid balancer pool (LBP), a mechanism for on chain price discovery of a new token. The LBP will be seeded with VCON governance tokens and protocol controlled FEI. The LBP determines what the starting price of the VCON token is at launch.
+The VCON governance token will be launched in a liquid balancer pool (LBP), a mechanism for on chain price discovery of a new token. The LBP will be seeded with VCON governance tokens and protocol controlled FEI. The LBP determines what the starting price of the VCON token is at launch. This VCON/FEI liquidity will remain permanently as PCV.
+
+After the LBP, there will be VCON incentives available for both VCON/FEI LPs and VOLT LP pairs. 
