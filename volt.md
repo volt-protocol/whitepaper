@@ -50,12 +50,14 @@ There will be a total of 1 billion VCON tokens created at launch. Of this supply
 * 10% was allocated for a seed round raising $2m to support VOLT development, on a three year linear vest with one year cliff.
 * 20% for VOLT contributors, on a four year linear vest with one year cliff
 * 42% for DAO partners
-    *  30% given to the TRIBE DAO which has incubated and is jointly building VOLT
+    *  30% given to the TRIBE DAO which has incubated and is jointly building VOLT. This will be offered as 6% given directly to the Tribe DAO in exchange for incubating VOLT, and an offer of 24% of the supply for a swap with TRIBE at seed round valuation
     *  6% given to OlympusDAO in exchange for participation in the Olympus incubator and onboarding VOLT as a treasury asset
     *  6% offered to Frax protocol as a token swap in recognition of our joint efforts coordinating on a CPI index
 * 18% reserved in protocol treasury for token incentives or bonds
     *  0.5% used for VOLT liquidity incentives over the first month after LBP, reassess based on results of this program
 * 10% issued in LBP to efficiently bootstrap VCON market
+
+Those VCON tokens offered for DAO swaps (not including the 6% each in direct grants to Olympus and TRIBE) will be mutually subject to on chain vesting with clawback.
 
 ## Direct Decentralization Through DAO Partners
 
@@ -79,6 +81,6 @@ This system will allow a market process to govern how VOLT and other PCV assets 
 
 The VOLT issuance system will be launched prior to the existence of the VCON governance token. In this early stage, it will be governed by the Volt DAO multisig, subject to a timelock and with veto power assigned to a Guardian (either the TRIBE Nope DAO or the Fei Labs Guardian). Users will be able to borrow VOLT on Fuse, and the PSM will start with 0 VOLT available for issuance and increase continuously based on the rate set by governance. The system will be live for 1-4 weeks before the LBP, giving users a chance to try it out. Before incentives launch, we expect most VOLT issuance will be through the PSM and VOLT price on secondary markets may be volatile.
 
-The VCON governance token will be launched in a liquid balancer pool (LBP), a mechanism for on chain price discovery of a new token. The LBP will be seeded with VCON governance tokens and protocol controlled FEI. The LBP determines what the starting price of the VCON token is at launch. This VCON/FEI liquidity will remain permanently as PCV.
+The VCON governance token will be launched in a liquid balancer pool (LBP), a mechanism for on chain price discovery of a new token. The LBP will be seeded with VCON governance tokens and protocol controlled FEI. The LBP determines what the starting price of the VCON token is at launch. This VCON/FEI liquidity will remain permanently as PCV. FEI was chosen as the pair instead of VOLT to give more confidence to LBP participants that the value of the launch pool will remain stable.
 
-After the LBP, there will be VCON incentives available for both VCON/FEI LPs and G-UNI VOLT/FEI LP pairs. Effectively, incentives on liquidity are a continuous token sale, and contribute to increasing the size of the system surplus.
+After the LBP, there will be VCON incentives available for VCON/VOLT LPs and G-UNI VOLT/FEI LP pairs. Effectively, incentives on liquidity are a continuous token sale, and contribute to increasing the size of the system surplus. 
