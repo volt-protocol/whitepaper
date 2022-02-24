@@ -33,6 +33,12 @@ In addition to the PSM, we will issue VOLT directly through supported Fuse pools
 At launch, we will support the following Fuse pools:
 * pool 8 (FeiRari DAO pool) 
 
+## Buffer Caps and Gradual Issuance
+Both supported Fuse pools and PSM venues will have buffer caps and daily issuance limits, meaning VOLT supply increase will be constrained to a predictable and gradual rate. At first, the buffer cap will be 30,000 VOLT and daily issuance of 25,000 VOLT. That means that for each venue, at most 30k VOLT can be issued in a day, and the maximum issuance on consecutive days is 25k VOLT (without waiting for the full buffer to recharge), or a total maximum daily issuance of 60k VOLT.
+
+## External PSM and Tribe Launch
+VOLT will seek the support of FEI protocol with our launch with a FEI loan allocated to a PSM controlled by TRIBE governance. This PSM will work the same as the main VOLT PSM, dripping FEI based on a buffer cap of 30k FEI. This will ensure that VOLT price is stable in the early stage before the VCON token and liquidity incentives are established.
+
 # Monetary Policy
 The VCON DAO is responsible for earning yield equal to or greater than inflation on protocol assets, with the goal of increasing the buffer of VOLT's backing over time. Our goal is to preserve purchasing power over the long term, so the protocol will take a conservative approach in whitelisitng yield venues.
 
@@ -54,7 +60,7 @@ There will be a total of 1 billion VCON tokens created at launch. Of this supply
     *  6% given to OlympusDAO in exchange for participation in the Olympus incubator and onboarding VOLT as a treasury asset
     *  6% offered to Frax protocol as a token swap in recognition of our joint efforts coordinating on a CPI index
 * 18% reserved in protocol treasury for token incentives or bonds
-    *  0.5% used for VOLT liquidity incentives over the first month after LBP, reassess based on results of this program
+    *  X.X% used for VOLT liquidity incentives over the first month after LBP, reassess based on results of this program
 * 10% issued in LBP to efficiently bootstrap VCON market
 
 Those VCON tokens offered for DAO swaps (not including the 6% each in direct grants to Olympus and TRIBE) will be mutually subject to on chain vesting with clawback.
