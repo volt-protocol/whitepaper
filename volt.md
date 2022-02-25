@@ -89,4 +89,4 @@ The VOLT issuance system will be launched prior to the existence of the VCON gov
 
 The VCON governance token will be launched in a liquid balancer pool (LBP), a mechanism for on chain price discovery of a new token. The LBP will be seeded with VCON governance tokens and protocol controlled FEI. The LBP determines what the starting price of the VCON token is at launch. This VCON/FEI liquidity will remain permanently as PCV. FEI was chosen as the pair instead of VOLT to give more confidence to LBP participants that the value of the launch pool will remain stable.
 
-After the LBP, there will be VCON incentives available for VCON/VOLT LPs and G-UNI VOLT/FEI LP pairs. Effectively, incentives on liquidity are a continuous token sale, and contribute to increasing the size of the system surplus. 
+After the LBP, there will be VCON incentives available for VCON/VOLT LPs and G-UNI VOLT/FEI LP pairs. Effectively, incentives on liquidity are a continuous token sale, and contribute to increasing the size of the system surplus. As a matter of policy, the VCON DAO is willing to engage in joint incentives with reputable stablecoin issuers for VOLT pairs.
