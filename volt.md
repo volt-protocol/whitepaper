@@ -23,21 +23,21 @@ All VOLT will be backed by yield sources offering returns greater than inflation
 VOLT will be issued through a Peg Stability Module (PSM) which will allow users to either mint or redeem VOLT at the current target price reported by the Volt Price Oracle in exchange for accepted stablecoins. These will be immediately deployed into whitelisted yield venues that offer returns greater than or equal to the prevailing inflation rate. Likewise, when a user wishes to exchange their VOLT for stablecoins, they can always swap at the PSM at VOLT's target price. Stablecoins are withdrawn from the yield venues and given to the user in exchange for VOLT.
 
 At launch the protocol will support the following stablecoins and yield venues:
-* Fei Protocol FEI, deposited into either Fuse pool 8 (FeiRari DAO Pool) or Fuse pool 156
+* Fei Protocol FEI, deposited into Fuse pool 8 (FeiRari DAO Pool)
 
-The PSM will charge a fee on VOLT issuance, with no fee on redemption. At launch the fee will be larger and compensated with VCON incentives. Later, the fee can be reduced. The assessment of a fee provides a buffer backing VOLT price.
+The PSM will charge a fee on VOLT issuance, with no fee on redemption. At launch the fee will be set to 2% to encourage building up a larger system surplus. After the launch of token incentives for VOLT, the fee will be reduced to 1%.
 
 ## VOLT Lending
 In addition to the PSM, we will issue VOLT directly through supported Fuse pools. At launch, there will be a "base" Volt DAO Fuse pool that allocates VOLT to other pools through plugins. The VOLT issuance pool will use the VOLT Price Oracle rather than market price data for the purposes of lending and liquidations. This means that borrowers are safe from being liquidated due to excess VOLT demand.
 
 At launch, we will support the following Fuse pools:
-* pool 8 (FeiRari DAO pool) 
+* pool 8 (FeiRari DAO pool)
 
 ## Buffer Caps and Gradual Issuance
-Both supported Fuse pools and PSM venues will have buffer caps and daily issuance limits, meaning VOLT supply increase will be constrained to a predictable and gradual rate. At first, the buffer cap will be 30,000 VOLT and daily issuance of 25,000 VOLT. That means that for each venue, at most 30k VOLT can be issued in a day, and the maximum issuance on consecutive days is 25k VOLT (without waiting for the full buffer to recharge), or a total maximum daily issuance of 60k VOLT.
+Both supported Fuse pools and PSM venues will have buffer caps and daily issuance limits, meaning VOLT supply increase will be constrained to a predictable and gradual rate. At first, the buffer cap will be 200k VOLT and daily issuance of 100k VOLT. That means that for each venue, at most 200k VOLT can be issued in a day, and the maximum issuance on consecutive days is 100k VOLT (without waiting for the full buffer to recharge), or a total maximum daily issuance of 400k VOLT from the two venues combined. At launch these rates will target a maximum issuance of 5 million VOLT in each of the debt issuance and PSM. In the future, the rate will be set to a level judged appropriate based on available liquidity and demand for VOLT.
 
 ## External PSM and Tribe Launch
-VOLT will seek the support of FEI protocol with our launch with a FEI loan allocated to a PSM controlled by TRIBE governance. This PSM will work the same as the main VOLT PSM, dripping FEI based on a buffer cap of 30k FEI. This will ensure that VOLT price is stable in the early stage before the VCON token and liquidity incentives are established.
+VOLT will seek the support of FEI protocol with our launch with a FEI loan allocated to a PSM controlled by TRIBE governance. This PSM will work in a similar way to the main VOLT PSM, dripping FEI based on a buffer cap of XXk FEI. This will ensure that VOLT price is stable in the early stage before the VCON token and liquidity incentives are established. We will request a loan of $5m FEI in the PSM, equal to the total debt issuance of VOLT that will be allowed prior to the launch of VCON token incentives.
 
 # Monetary Policy
 The VCON DAO is responsible for earning yield equal to or greater than inflation on protocol assets, with the goal of increasing the buffer of VOLT's backing over time. Our goal is to preserve purchasing power over the long term, so the protocol will take a conservative approach in whitelisitng yield venues.
@@ -85,8 +85,8 @@ This system will allow a market process to govern how VOLT and other PCV assets 
 
 # Launch Plans
 
-The VOLT issuance system will be launched prior to the existence of the VCON governance token. In this early stage, it will be governed by the Volt DAO multisig, subject to a timelock and with veto power assigned to a Guardian (either the TRIBE Nope DAO or the Fei Labs Guardian). Users will be able to borrow VOLT on Fuse, and the PSM will start with 0 VOLT available for issuance and increase continuously based on the rate set by governance. The system will be live for 1-4 weeks before the LBP, giving users a chance to try it out. Before incentives launch, we expect most VOLT issuance will be through the PSM and VOLT price on secondary markets may be volatile.
+The VOLT issuance system will be launched prior to the existence of the VCON governance token. In this early stage, it will be governed by the Volt DAO multisig, subject to a timelock and with veto power assigned to a Guardian (either the TRIBE Nope DAO or the Fei Labs Guardian). Users will be able to borrow VOLT on Fuse, and the PSM will start with 0 VOLT available for issuance and increase continuously based on the rate set by governance. The system will be live for one month before the LBP, giving users a chance to try it out. Before incentives launch, we expect most VOLT issuance will be through the PSM and VOLT price on secondary markets may be volatile.
 
-The VCON governance token will be launched in a liquid balancer pool (LBP), a mechanism for on chain price discovery of a new token. The LBP will be seeded with VCON governance tokens and protocol controlled FEI. The LBP determines what the starting price of the VCON token is at launch. This VCON/FEI liquidity will remain permanently as PCV. FEI was chosen as the pair instead of VOLT to give more confidence to LBP participants that the value of the launch pool will remain stable.
+The VCON governance token will be launched in a liquid balancer pool (LBP), a mechanism for on chain price discovery of a new token. The LBP will be seeded with VCON governance tokens and protocol controlled FEI. The LBP determines what the starting price of the VCON token is at launch. This VCON/FEI liquidity will remain permanently as PCV. FEI was chosen as the pair instead of VOLT to give more confidence to LBP participants that the value of the launch pool will remain stable. The LBP will start at a market cap of $250m for VCON or $0.25 per VCON token and last for a week.
 
 After the LBP, there will be VCON incentives available for VCON/VOLT LPs and G-UNI VOLT/FEI LP pairs. Effectively, incentives on liquidity are a continuous token sale, and contribute to increasing the size of the system surplus. As a matter of policy, the VCON DAO is willing to engage in joint incentives with reputable stablecoin issuers for VOLT pairs.
