@@ -52,11 +52,11 @@ There will be a total of 1 billion VCON tokens created at launch. Of this supply
 * 10% was allocated for a seed round raising $2m to support VOLT development, on a three year linear vest with one year cliff.
 * 20% for VOLT contributors, on a four year linear vest with one year cliff
 * 42% for DAO partners
-    *  30% given to the TRIBE DAO which has incubated and is jointly building VOLT. This will be offered as 6% given directly to the Tribe DAO in exchange for incubating VOLT and assistance with launch, and an offer of 24% of the supply for a swap with TRIBE at seed round valuation to establish long term alignment
+    *  30% given to the TRIBE DAO which has incubated and is jointly building VOLT. This will be offered as 6% given directly to the Tribe DAO in exchange for incubating VOLT and assistance with launch, and an offer of 24% of the supply for a swap with TRIBE at seed round valuation to establish long term alignment. TRIBE obtained in this way will be held as xTRIBE and used to encourage VOLT adoption on Fuse
     *  6% given to OlympusDAO in exchange for participation in the Olympus incubator and onboarding VOLT as a treasury asset
-    *  6% offered to Frax protocol as a token swap in recognition of our joint efforts coordinating on a CPI index
-* 18.1% reserved in protocol treasury for token incentives or bonds
-    *  X.X% used for VOLT liquidity incentives over the first month after LBP, reassess based on results of this program
+    *  6% offered to Frax protocol as a token swap for FXS in recognition of our joint efforts coordinating on a CPI index. FXS obtained will be locked as veFXS and used to enhance VOLT liquidity through gauge votes
+* 18.1% reserved in protocol treasury for token incentives, bonds, or future treasury swaps
+    *  0.25% used for VOLT liquidity incentives over the first month after LBP, reassess based on results of this program
 * 9.9% issued in LBP to efficiently bootstrap VCON market
 
 Those VCON tokens offered for DAO swaps (not including the 6% each in direct grants to Olympus and TRIBE) will be mutually subject to on chain vesting with clawback.
