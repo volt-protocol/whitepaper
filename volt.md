@@ -1,8 +1,8 @@
 # ⚡VOLT⚡
 
-Inflation erodes the purchasing power of savers over time unless they seek out yield. Volatile inflation makes it impossible to plan ahead and undermines those dependent on fixed incomes. It also makes it difficult to trust "fixed rate" terms, when the value of the money itself can change. Volt offers a solution -- a stablecoin whose price tracks inflation, rather than a depreciating fiat currency.
+High inflation erodes the purchasing power of savers over time unless they seek out yield and undermines those dependent on fixed income. Volatile inflation makes it impossible to plan ahead financially when the value of the money itself can change unpredictably. Volt offers a solution -- a stablecoin whose price tracks inflation, rather than a depreciating fiat currency.
 
-VOLT will start at a price of $1 and adjust over time according to consumer price index (CPI) data. This will allow VOLT holders to preserve their wealth over time without the need to actively manage their savings or taking on excess risk.
+VOLT will start at a price of $1 and adjust over time according to consumer price index (CPI) data. This will allow VOLT holders to preserve their wealth over time without the need to actively manage their savings or taking on excessive risk.
 
 # Volt and the CPI
 The CPI-U or Consumer Price Index for Urban Consumers is composed of data collected by the Bureau of Labor Statistics (BLS) on consumer prices in urban areas. It tracks the prices of goods and services in relation to the starting index price for those same items in 1982. The U.S. Government targets an inflation rate of 1-2% annually which is designed to erode purchasing power over time and incentivize those who hold wealth to either spend it, which stimulates the economy or invest it which provides jobs. Recently, the inflation rate has been higher and more volatile, putting more pressure on savers or those on fixed incomes.
@@ -20,12 +20,12 @@ The VOLT system will expose a public smart contract API that any project can use
 All VOLT will be backed by yield sources offering returns greater than inflation at an acceptable risk. The role of the VCON DAO, like in MakerDAO or other lending platforms, is to manage this risk. There are two main mechanisms for VOLT issuance, the peg stability module (PSM) and debt issuance.
 
 ## Peg Stability Module
-VOLT will be issued through a Peg Stability Module (PSM) which will allow users to either mint or redeem VOLT at the current target price reported by the Volt Price Oracle in exchange for accepted stablecoins. These will be immediately deployed into whitelisted yield venues that offer returns greater than or equal to the prevailing inflation rate. Likewise, when a user wishes to exchange their VOLT for stablecoins, they can always swap at the PSM at VOLT's target price. Stablecoins are withdrawn from the yield venues and given to the user in exchange for VOLT. At launch, there will only be a FEI PSM, with all PCV FEI deposited in a single yield venue. Our default choice is Fuse pool 8 (FeiRari DAO Pool), though if Fuse pool 156 (Tribe Convex Pool) is live before our launch we may prefer that option. In the future, VCON holders will allocate PCV assets among numerous venues.
+VOLT will be issued through a Peg Stability Module (PSM) which will allow users to either mint or redeem VOLT at the current target price reported by the Volt Price Oracle in exchange for accepted stablecoins. These will be immediately deployed into approved yield venues that offer returns greater than or equal to the prevailing inflation rate. Likewise, when a user wishes to exchange their VOLT for stablecoins, they can always swap at the PSM at VOLT's target price. Stablecoins are withdrawn from the yield venues and given to the user in exchange for VOLT. At launch, there will only be a FEI PSM, with all PCV FEI deposited in a single yield venue. Our default choice is Fuse pool 8 (FeiRari DAO Pool), though if Fuse pool 156 (Tribe Convex Pool) is live before our launch we may prefer that option. In the future, VCON holders will allocate PCV assets among numerous venues.
 
 The PSM will charge a fee on VOLT issuance, with no fee on redemption. At launch the fee will be set to 2% to encourage building up a larger system surplus. After the launch of VCON incentives, the fee will be reduced to 1%.
 
 ## VOLT Lending
-In addition to the PSM, we will issue VOLT directly through supported Fuse pools. At launch, there will be a "base" Volt DAO Fuse pool that allocates VOLT to other pools through plugins. The VOLT issuance pool will use the VOLT Price Oracle rather than market price data for the purposes of lending and liquidations. This means that borrowers are safe from being liquidated due to excess VOLT demand.
+In addition to the PSM, we will issue VOLT directly through supported Fuse pools. VOLT issuance pools will use the VOLT Price Oracle rather than market price data for the purposes of lending and liquidations. This means that borrowers are safe from being liquidated due to excess VOLT demand, and VOLT is not overvalued in these pools as collateral during times of high demand.
 
 At launch, we will support the following Fuse pools:
 * pool 8 (FeiRari DAO pool)
@@ -37,7 +37,7 @@ Both supported Fuse pools and PSM venues will have buffer caps and daily issuanc
 VOLT will seek the support of FEI protocol with our launch with a FEI loan allocated to a PSM controlled by TRIBE governance. This PSM will work in a similar way to the main VOLT PSM, dripping FEI based on a buffer cap of XXk FEI. This will ensure that VOLT price is stable in the early stage before the VCON token and liquidity incentives are established. We will request a loan of $5m FEI in the PSM, equal to the total debt issuance of VOLT that will be allowed prior to the launch of VCON token incentives.
 
 # Monetary Policy
-The VCON DAO is responsible for earning yield equal to or greater than inflation on protocol assets, with the goal of increasing the buffer of VOLT's backing over time. Our goal is to preserve purchasing power over the long term, so the protocol will take a conservative approach in whitelisitng yield venues.
+The VCON DAO is responsible for earning yield equal to or greater than inflation on protocol assets, with the goal of increasing the buffer of VOLT's backing over time. Our goal is to preserve purchasing power over the long term, so the protocol will take a conservative approach in authorized yield venues.
 
 ## Collateralization
 Like Fei Protocol, Volt's PCV will always be **overcollateralized**, with the desired collateralization set by governance. At launch, the system will be only slightly overcollateralized due to the fee on VOLT issuance. Provided the protocol earns yield greater than inflation on protocol assets, collateralization will increase over time. New VOLT issuance through the PSM lowers the collateralization ratio toward 1:1+issuance fee. As a result, the DAO will limit the rate of VOLT issuance when the buffer is too small, or increase issuance if the buffer grows sufficiently. In the future, the DAO will seek to standardize the VOLT supply expansion rate according to a consistent schedule. Early on, we must regulate supply based on the protocol's ability to source yield at an appropriate risk level.
@@ -71,7 +71,7 @@ The VCON Pool will be the same as the VOLT issuance pool described in the "VOLT 
 * use a system price for VCON instead of market price so holders can borrow their pro rata share of assets
 * the pool will have only forced liquidations, as the deposited VCON is used for governance rather than to "back" the assets in the pool
 * charge a fixed rate of 1% for VOLT borrowing, charge the inflation rate reported by VOLT Price Oracle plus 1% for stable asset borrowing
-* borrowers can only deposit assets into whitelisted yield venues, like TURBO, not just walk away with them
+* borrowers can only deposit assets into authorized yield venues, like TURBO, not just walk away with them
 * we will have incentives on borrowing in this pool so active VCON holders dilute passive holders
 
 This system will allow a market process to govern how VOLT and other PCV assets are allocated among yield venues, while ensuring the protocol is always earning at least the inflation rate on PCV stablecoins. Note that in this model VCON holders directly access a **cash flow**, as whatever they can earn allocating VOLT or PCV stablecoins in excess of inflation and the DAO's 1% cut which accumulates in reserves, they keep.
@@ -85,3 +85,6 @@ The VOLT issuance system will be launched prior to the existence of the VCON gov
 The VCON governance token will be launched in a liquidity bootstrapping pool (LBP) on Balancer via Copper Launch. An LBP is a mechanism for on chain price discovery of a new token. The LBP will be seeded with VCON governance tokens and protocol controlled FEI. The LBP determines what the starting price of the VCON token is at launch. This VCON/FEI liquidity will remain permanently as PCV, although in the future may be migrated to VCON/VOLT liquidity. The LBP will start at a market cap of $250m for VCON or $0.25 per VCON token and last for a week. The pool will be seeded with 9.9% of the VCON supply, 99m VCON tokens and 250k FEI at a 99/1 weighting.
 
 After the LBP, there will be VCON incentives available for the G-UNI VOLT/FEI LP pair as well as the VOLT/OHM Curve LP pair. Effectively, incentives on liquidity are a continuous token sale, and contribute to increasing the size of the system surplus. As a matter of policy, the VCON DAO is willing to engage in joint incentives with reputable stablecoin issuers for VOLT pairs, especially when it involves DAO treasury partnerships.
+
+## Olympus Pro Bonding
+After the LBP, we will offer VCON in exchange for VOLT bonds on Olympus Pro. 
