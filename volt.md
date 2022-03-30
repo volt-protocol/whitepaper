@@ -29,9 +29,15 @@ There are two main mechanisms for VOLT issuance, the peg stability module (PSM) 
 ## Peg Stability Module
 VOLT will be issued through a Peg Stability Module (PSM) which will allow users to either mint or redeem VOLT at the current target price reported by the Volt Price Oracle in exchange for accepted stablecoins. All proceeds from VOLT minting will be immediately deployed into yield venues chosen by governance. Conversely, when a user wishes to exchange their VOLT for stablecoins, they can always swap with the PSM at the current VOLT target price. Stablecoins are then withdrawn from the yield venues and given to the user in exchange for VOLT.
 
+<<<<<<< HEAD
 At launch there will only be a FEI PSM, with all PCV FEI deposited in a single yield venue, Fuse pool 8 (FeiRari DAO Pool). After the liquidity bootstrapping event, additional yield venues will be added, starting with Fuse pools judged to provide better returns than pool 8 at reasonable risk, for example pool 156 (Tribe Convex Pool) which supports stablecoin yield farming or the OlympusDAO Fuse pool.
 
 The PSM will charge a fee on VOLT issuance, with no fee on redemption. At launch the fee will be set to 2% to build a larger system surplus. After the launch of VCON incentives, the fee will be reduced to 1%.
+=======
+At launch, there will only be a FEI PSM, with all PCV FEI deposited in a single yield venue, Fuse pool 8 (FeiRari DAO Pool). Following launch, governance may onboard additional yield venues, starting with additional Fuse pools and then external platforms.
+
+The PSM will charge a fee on VOLT issuance, with no fee on redemption. At launch the fee will be set to 2% to encourage building up a larger system surplus.
+>>>>>>> 8676a91bd02180b9fb4c0a49ec545bc6b17cd8dd
 
 ## VOLT Issuance on Fuse
 In addition to the PSM, VOLT can be minted through supported Fuse pools. VOLT issuance pools will use the VOLT Price Oracle rather than market price data for the purposes of lending and liquidations. This means that borrowers are safe from being liquidated due to excess VOLT demand, and VOLT is not overvalued in these pools as collateral during times of high demand. At launch, only pool 8 (FeiRari DAO pool) is supported.
