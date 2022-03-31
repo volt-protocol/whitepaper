@@ -1,5 +1,5 @@
 # ⚡VOLT⚡
-Inflation erodes the purchasing power of savers over time. Unpredictable inflation rates make it impossible to plan ahead financially when the value of money itself is constantly in flux. The US dollar lost 7.9% of its value in the last year, and the Euro 5.9%, the highest inflation rate in 39 years. Volt offers a solution -- a stablecoin that combats inflation by tracking real world prices, rather than pegging its value to a depreciating fiat currency.
+Inflation erodes the purchasing power of savers over time. Unpredictable inflation rates make it impossible to plan ahead financially when the value of money itself is in flux. The US dollar lost 7.9% of its value in the last year, and the Euro 5.9%, the highest inflation rate in 39 years. Volt offers a solution -- a stablecoin that combats inflation by tracking real world prices, rather than pegging its value to a depreciating fiat currency.
 
 VOLT will start at a price of $1 and is designed to adjust over time according to Consumer Price Index (CPI) data. Like MakerDAO’s DAI, VOLT will be backed by a mixture of user-deposited collateral and protocol-controlled assets.
 
@@ -7,7 +7,9 @@ VOLT will start at a price of $1 and is designed to adjust over time according t
  
 # Volt and the CPI
 
-The U.S. Federal Reserve targets an inflation rate of 2% annually which is designed to erode purchasing power over time and incentivize those who hold wealth to either spend or invest. This investment provides jobs and stimulates the economy. While this goal makes sense, inflation unfairly punishes savers. The general populace are forced to speculate on volatile assets like stocks or real estate, or accept negative real rates in their savings accounts.
+The U.S. Federal Reserve targets an inflation rate of 2% annually which is designed to erode purchasing power over time and incentivize those who hold wealth to either spend or invest. This investment provides jobs and stimulates the economy. While this goal makes sense, inflation unfairly punishes savers. The public is forced to choose between speculating on volatile assets like stocks or real estate, or accepting negative real rates in their savings accounts.
+
+Volt's solution is to base its price on the Consumer Price Index instead of the price of an existing fiat currency. Unlike other stablecoins which are always minted or redeemed at a price of $1, the price of VOLT changes over time to account for inflation.
 
 VOLT selected the CPI-U or Consumer Price Index for Urban Consumers as the source of truth for inflation. The CPI-U is composed of data collected by the Bureau of Labor Statistics (BLS) on consumer prices in urban areas. It tracks the prices of goods and services in relation to the starting index price for those same items in 1982.
 
@@ -29,15 +31,9 @@ There are two main mechanisms for VOLT issuance, the peg stability module (PSM) 
 ## Peg Stability Module
 VOLT will be issued through a Peg Stability Module (PSM) which will allow users to either mint or redeem VOLT at the current target price reported by the Volt Price Oracle in exchange for accepted stablecoins. All proceeds from VOLT minting will be immediately deployed into yield venues chosen by governance. Conversely, when a user wishes to exchange their VOLT for stablecoins, they can always swap with the PSM at the current VOLT target price. Stablecoins are then withdrawn from the yield venues and given to the user in exchange for VOLT.
 
-<<<<<<< HEAD
-At launch there will only be a FEI PSM, with all PCV FEI deposited in a single yield venue, Fuse pool 8 (FeiRari DAO Pool). After the liquidity bootstrapping event, additional yield venues will be added, starting with Fuse pools judged to provide better returns than pool 8 at reasonable risk, for example pool 156 (Tribe Convex Pool) which supports stablecoin yield farming or the OlympusDAO Fuse pool.
+At launch there will only be a FEI PSM, with all PCV FEI deposited in a single yield venue, Fuse pool 8 (FeiRari DAO Pool). Following launch governance will onboard additional yield venues, starting with additional Fuse pools and then external platforms.
 
-The PSM will charge a fee on VOLT issuance, with no fee on redemption. At launch the fee will be set to 2% to build a larger system surplus. After the launch of VCON incentives, the fee will be reduced to 1%.
-=======
-At launch, there will only be a FEI PSM, with all PCV FEI deposited in a single yield venue, Fuse pool 8 (FeiRari DAO Pool). Following launch, governance may onboard additional yield venues, starting with additional Fuse pools and then external platforms.
-
-The PSM will charge a fee on VOLT issuance, with no fee on redemption. At launch the fee will be set to 2% to encourage building up a larger system surplus.
->>>>>>> 8676a91bd02180b9fb4c0a49ec545bc6b17cd8dd
+The PSM will charge a fee on VOLT issuance, with no fee on redemption. At launch the fee will be set to 2% to encourage building up a larger system surplus and may be altered in the future by governance.
 
 ## VOLT Issuance on Fuse
 In addition to the PSM, VOLT can be minted through supported Fuse pools. VOLT issuance pools will use the VOLT Price Oracle rather than market price data for the purposes of lending and liquidations. This means that borrowers are safe from being liquidated due to excess VOLT demand, and VOLT is not overvalued in these pools as collateral during times of high demand. At launch, only pool 8 (FeiRari DAO pool) is supported.
@@ -96,11 +92,11 @@ The long term goal of the VCON DAO is to remove as many arbitrary, vote-based ac
 # Launch Plans
 
 ## Audits
-VOLT has been audited by Zellic with no vulnerabilities found. (link to audit report)
-Prior to launch, Volt will be audited through [Code4rena](https://code4rena.com/contests/2022-03-volt-protocol-contest) public audit. There is also a final capstone audit scheduled for after Code4rena. After launch, the DAO will offer competitive bug bounties that scale as Volt does.
+VOLT has been audited by Zellic with no vulnerabilities found. (https://github.com/code-423n4/2022-03-volt/tree/main/audits)
+Volt is currently undergoing a [Code4rena](https://code4rena.com/contests/2022-03-volt-protocol-contest) public audit. After launch, the DAO will offer competitive bug bounties that scale as Volt does.
 
 ## Guarded Launch
-The VOLT issuance system will be launched prior to the VCON governance token. In this early stage, it will be governed by the Volt DAO multisig, subject to a timelock and with veto power assigned to an external Guardian. Both Fuse issuance and the PSM will be subject to limits during this period. At launch, there will be a debt ceiling of 30m VOLT on Fuse and 10m in the PSM. There will be a daily "drip" of additional VOLT into both PSM and Fuse at a rate adjustable by governance. At first, this will be set to 50k VOLT daily for each venue.
+The VOLT issuance system will be launched prior to the VCON governance token. In this early stage, it will be administered by the Volt DAO multisig consisting of Volt Protocol founder Kirk Hutchison, Joey Santoro (TRIBE), Sam Kazemian (FRAX), Glueeater (OlympusDAO), and gabagool.eth (Information Token). Both Fuse issuance and the PSM will be subject to limits during this period. At launch, there will be a debt ceiling of 30m VOLT on Fuse and 10m in the PSM. There will be a daily "drip" of additional VOLT into both PSM and Fuse at a rate adjustable by governance. The initial drip rate is zero and will be adjusted based on market data afteer lauynch.
 
 ## Liquidity Bootstrapping Event
 Plans for the launch of the VCON governance token are tentative. The launch will occur publicly, with 10% of the token supply available, and take place approximately a month after VOLT issuance is live. VCON will be launched in a liquidity bootstrapping pool (LBP) or similar mechanism. An LBP is a mechanism for on chain price discovery of a new token that resembles a Dutch Auction. The LBP will be seeded with VCON governance tokens and protocol controlled FEI. The LBP will start at a market cap of $250m for VCON or $0.25 per VCON token and last for a week. The pool will be seeded with 9.9% of the VCON supply, 99m VCON tokens and 250k FEI at a 99/1 weighting. Half of the proceeds of the LBP will be held by the DAO treasury as liquidity for VCON/FEI, the other half added to the surplus to backstop VOLT.
