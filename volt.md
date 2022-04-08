@@ -42,7 +42,7 @@ In addition to the PSM, VOLT can be minted through supported Fuse pools. VOLT is
 Both supported Fuse pools and PSM venues will have buffer caps and daily issuance limits, meaning VOLT supply increase will be constrained to a predictable and gradual rate. At first, the buffer cap and daily issuance will be set to support the goal of issuing at most 30m VOLT through Fuse and 10m through the PSM prior to our LBP and token incentives. In the future, the rate will be set to a level judged appropriate based on available liquidity and demand for VOLT.
 
 ## TRIBE Launch Support
-The TRIBE DAO approved a [token swap with Volt Protocol](https://tribe.fei.money/t/fip-88-volt-joins-the-tribe/4007) which will add 2.4 FEI to the system surplus. Additionally, the TRIBE DAO will allocate 10m FEI to mint VOLT and backstop liquidity during the launch period.
+The TRIBE DAO approved a [token swap with Volt Protocol](https://tribe.fei.money/t/fip-88-volt-joins-the-tribe/4007) which will add 2.4 million FEI to the system surplus. Additionally, the TRIBE DAO will allocate 10m FEI to mint VOLT and backstop liquidity during the launch period.
 
 ## Monetary Policy
 The VCON DAO seeks to earn yield equal to or greater than inflation on protocol assets, with the goal of increasing the buffer of VOLT's backing over time. The goal is to preserve purchasing power over the long term, so the protocol should take a conservative approach in authorized yield venues.
