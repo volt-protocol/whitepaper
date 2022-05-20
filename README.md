@@ -1,6 +1,6 @@
 # ⚡VOLT⚡
 
-VOLT is a [stablecoin](#stablecoin) that tracks the price of $1 in December 2021.
+VOLT is a [stablecoin](#stablecoin) that tracks the purchasing power of $1, beginning from December 2021.
 
 Persistent [inflation](#inflation) erodes savings and makes it difficult to plan ahead financially. By holding VOLT, users protect their purchasing power over time without taking on exposure to volatile assets.
 
