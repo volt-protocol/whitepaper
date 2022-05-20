@@ -39,7 +39,7 @@ Smart contracts refer to code deployed on a blockchain network. In the case of V
 ### Inflation
 Inflation refers to the loss in purchasing power of a currency over time. While in the short term prices can fluctuate for many reasons, such as shortages of a given good or service, the long term decline in purchasing power is due to expansion of the currency supply. Central banks print money to help governments accomplish their goals, a stealth tax on savers.
 
-### Protocol Controlled Calue
+### Protocol Controlled Value
 Commonly abbreviated as PCV, refers to cryptoassets deposited into the protocol and redeemable for VOLT (or whichever system is being referred to, FEI also has protocol controlled value). Distinct from the overcollateralized user deposited ETH that backs DAI or LUSD, which is not directly redeemable.
 
 ### CPI-U
