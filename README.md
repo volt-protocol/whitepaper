@@ -30,31 +30,31 @@ VOLT is an experimental open system, all participants should be aware that there
 All code used in the VOLT system will be audited and open source, and the system’s state will be observable on chain. Please do your own research and enjoy responsibly.
 
 # Glossary and Definitions
-### stablecoin
+### Stablecoin
 A stablecoin is a cryptocurrency whose value is *pegged* to that of another asset, in other words a synthetic asset or derivative. The value of stablecoins is backed either by assets in the traditional finance system (as in the case of USDC or USDT), by cryptoassets as in the case of LUSD, or a combination of both like DAI.
 
-### smart contracts
+### Smart Contracts
 Smart contracts refer to code deployed on a blockchain network. In the case of Volt Protocol, the system contracts are written in Solidity and deployed on Ethereum mainnet. In the future, they will also exist on rollups like Arbitrum. The source code for the Volt Protocol contracts is open source and can be found [on Github](https://github.com/volt-protocol/volt-protocol-core).
 
-### inflation
+### Inflation
 Inflation refers to the loss in purchasing power of a currency over time. While in the short term prices can fluctuate for many reasons, such as shortages of a given good or service, the long term decline in purchasing power is due to expansion of the currency supply. Central banks print money to help governments accomplish their goals, a stealth tax on savers.
 
-### protocol controlled value
+### Protocol Controlled Calue
 Commonly abbreviated as PCV, refers to cryptoassets deposited into the protocol and redeemable for VOLT (or whichever system is being referred to, FEI also has protocol controlled value). Distinct from the overcollateralized user deposited ETH that backs DAI or LUSD, which is not directly redeemable.
 
-### cpi-u
+### CPI-U
 The CPI-U is published monthly by the United States Bureau of Labor Statistics (BLS). It tracks the prices of goods and services in relation to the starting index price for those same items in 1982. VOLT uses the CPI-U as its inflation benchmark because it most accurately reflects the rising costs consumers pay due to inflation in the real economy and is one of the most widely used and understood measurements of inflation. One common critique of the CPI-U is that it isn’t weighted heavily enough towards housing, which represents a large and growing portion of expenses for most people in the United States. It's important to remember that the price of a single good can increase faster than others for reasons other than inflation.
 
-### chainlink
+### Chainlink
 Chainlink is a network of node operators that reports real world data onto blockchains like Ethereum. Chainlink was chosen because it is the most well established and widely adopted oracle provider. There are safeguards in place such that if an oracle made a malicious report, like 10000x inflation in a single month, it will be rejected by the Volt smart contracts. If an oracle fails to report, the old inflation rate will remain in place. Safe failure modes are a key part of Volt design.
 
-### minting
+### Minting
 VOLT can be minted using one of the supported assets like FEI or USDC. There is a limit on the total amount of VOLT, once this limit is reached no more VOLT can be minted through the PSM until redemptions occur. There are also limits on how much can be minted against a given asset like FEI. These limits can be raised by governance. There is a fee of 0.5% to mint VOLT which may be adjusted by governance.
 
-### redemption
+### Redemption
 VOLT can be redeemed through the PSM at any time with zero slippage, zero fees. Some PSMs are mint only, such as the USDC PSM, so redemption and minting may not always be available in the same asset. There is more than $2 of FEI in the PSM for every $1 of circulating user VOLT, so the entire supply could be redeemed at any time safely leaving room to spare.
 
-### market governance
+### Market Governance
 The goal of the VCON governance system is to allow for fully liquid, block-by-block allocation of PCV among yield venues and adjustment of debt ceiling between issuance pools. This means that allocation of Volt's PCV must be a **market outcome**, not a governance decision. It is essential to let tokenholders directly allocate protocol assets while having the proper skin in the game. They must benefit or suffer most from their individual governance decisions, not the result of majority consensus or the efforts of others.
 
 While this system is under active design, here is an illustration of how it might work and the principles involved:
@@ -70,8 +70,8 @@ Imagine a special borrowing pool like Aave, Compound, or Fuse, in which VCON can
 
 Note that in this model VCON holders directly access a cash flow based on their independent risk management. What they can earn allocating VOLT or PCV stablecoins in excess of inflation and the reserves fee, they keep. The long term goal of the VCON DAO is to remove as many arbitrary, vote-based actions from the system as possible. To build the most scalable and powerful system possible, we must rely on markets rather than governance.
 
-### progressive decentralization
+### Progressive Decentralization
 Given the high complexity of building a decentralized financial application, many small changes and course corrections are required. In the early period the presence of Fei Protocol engineers on the multisig ensures that the Volt team does not have unilateral control over the system. In the future, all changes will be subjected to a timelock and vetoable by Guardian roles. Once the VCON governance token is live, holders will also have veto power over system changes.
 
-### rollups
+### Rollups
 A rollup or "layer two" is a scaling solution allowing users of Ethereum to send transactions at lower cost. On Ethereum mainnet, it costs several dollars each time a user transfers tokens, and more complex operations cost more. Rollups allow this cost to be reduced dramatically while maintaining the security benefits of Ethereum itself. Examples of rollups include Arbitrum and Optimism. [Read here to learn more about the technical details of rollups and Ethereum scaling](https://ethereum.org/en/developers/docs/scaling/).
