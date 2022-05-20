@@ -4,7 +4,7 @@ VOLT is a [stablecoin](#stablecoin) that tracks the price of $1 in December 2021
 
 Persistent [inflation](#inflation) erodes savings and makes it difficult to plan ahead financially. By holding VOLT, users protect their purchasing power over time without taking on exposure to volatile assets.
 
-Volt Protocol is a system of [smart contracts](#smart-contracts) that allows users to [mint VOLT](#minting) using stablecoins like FEI or USDC, or [redeem VOLT](#redemption) for its face value. There is a fee on minting, no fee or slippage on redemption. There are caps on VOLT minting to protect the system, no limitations on redemption. Stablecoins deposited into the protocol are directed to [yield venues](#yield-venues) to earn and fight inflation.
+Volt Protocol is a system of [smart contracts](#smart-contracts) that allows users to [mint VOLT](#minting) using stablecoins like FEI or USDC, or [redeem VOLT](#redemption) for its face value. There is a fee on minting, and no fee on redemption. There are caps on VOLT minting to protect the system, no limitations on redemption.
 
 VOLT is a reserves backed stablecoin, meaning that each $1 of VOLT is backed by more than $1 in [protocol controlled value](#protocol-controlled-value). The reserves target is a 20% buffer above the circulating VOLT supply, allowing the system to endure losses in a yield venue or periods in which yields are lower than the inflation rate.
 
@@ -75,6 +75,3 @@ Given the high complexity of building a decentralized financial application, man
 
 ### rollups
 A rollup or "layer two" is a scaling solution allowing users of Ethereum to send transactions at lower cost. On Ethereum mainnet, it costs several dollars each time a user transfers tokens, and more complex operations cost more. Rollups allow this cost to be reduced dramatically while maintaining the security benefits of Ethereum itself. Examples of rollups include Arbitrum and Optimism. [Read here to learn more about the technical details of rollups and Ethereum scaling](https://ethereum.org/en/developers/docs/scaling/).
-
-### yield venues
-There are numerous smart contract systems that accept deposits of stablecoins and offer yield. The dominant category are lending protocols like Aave or Compound, where users can borrow stablecoins against other cryptoassets. All yield venues include risks, including possibility of smart contract exploit or liquidation failure.
