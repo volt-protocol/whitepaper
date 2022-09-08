@@ -160,9 +160,10 @@ The interest rate VOLT holders receive is calculated as
 * `k` is the sensitivity of the system to short term deviations from the target surplus buffer ratio. A k of zero means that VOLT holders receive a constant yield that never deviates from the base yield venue rate, a k of 1 means that the yield VOLT holders receive is 1:1 directly proportional to the level of deviation from the target yield rate, and a k of 1000 means the system is extremely sensitive to deviations from the target.
 
 When market governance is active, the yield earned, less the profit share with VCON holders, will be accounted for in the time weighted average yield snapshotting. The interest rate paid by VCON holders is expressed in the VOLT price, since they borrow and repay VOLT with no explicit fee outside of profit sharing.
-Market Governance Fee Split
 
-Interest is accounted for whenever protocol assets enter or exit a yield venue, such as when a VCON holder takes profits, or a VOLT holder redeems. All yield is initially split into two – a portion that accrues to the VCON holder, and part for the surplus buffer (and ultimately the VOLT holders).
+# Market Governance Fee Split
+
+Interest is accounted for whenever protocol assets enter or exit a yield venue, such as when a VCON holder takes profits, or a VOLT holder redeems or mints. All yield is initially split into two – a portion that accrues to the VCON holders allocating to that particular venue, and a portion that goes to the VOLT holders by being directed to the surplus buffer.
 
 ## VCON Revenue Split
 
