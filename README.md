@@ -1,7 +1,8 @@
 # ⚡VOLT⚡
--------------------
 
-# Contents
+<details>
+<summary>Contents</summary>
+
 [Overview](#overview)
 
 [Accounting](#pcv-accounting)
@@ -67,6 +68,9 @@
 * [Liquidity Management](#liquidity-management)
 * [Rate and Price Uniformity](#rate-and-price-uniformity)
 
+</details>
+
+---------------
 
 # Overview
 Market governance seeks to create a crypto economic incentive aligned system balancing supply and demand between capital suppliers and capital allocators. Users supply capital in the form of VOLT, and the protocol adjusts the VOLT rate to manage liquidity and reach an efficient market equilibrium.
