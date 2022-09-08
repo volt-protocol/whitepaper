@@ -3,7 +3,6 @@
 
 [Accounting](#pcv-accounting)
 * [Reserves](#reserves)
-* [Market-governed value](#market-governed-value)
 * [Surplus](#system-surplus)
 * [Oracles](#accounting-oracles)
     * [TWAPCV](#twapcv)
@@ -51,12 +50,19 @@
 * [Surplus Buffer Deviation Sensitivity](#surplus-buffer-deviation-sensitivity)
 * [VCON Participation Deviation Sensitivity](#vcon-utilization-deviation-sensitivity)
 * [VCON Auction Parameters](#auction-parameters)
+* [PSM Allocations](#psm-allocations)
 
 [VCON Economics](#vcon-economics)
 * [VCON Auction](#vcon-auction)
 * [Ragequit](#ragequit)
 
 [vETH](#veth)
+
+[MVP Constraints](#MVP-constraints)
+
+[Cross Chain](#cross-chain)
+* [Liquidity Management](#liquidity-management)
+* [Rate and Price Uniformity](#rate-and-price-uniformity)
 
 
 # Overview
@@ -76,11 +82,10 @@ Reserves are used either to provide liquidity for VOLT holders seeking to exit (
 
 The target value for the reserves will likely be determined by governance in an early version of the system, and later dynamically based on the surplus buffer ratio, the size of the surplus buffer vs the size of the PCV as a whole. When the surplus buffer is too small, more PCV should be held idle to prevent unsafe amounts of leverage being granted to VCON holders, which causes incentive alignment to break down.
 
-## Market-governed value
-Market-governed value (MGV) is the portion of the PCV which is controlled by VCON market governance to earn yield. VOLT holders can also redeem directly against liquid MGV for a nominal fee. When the capital in the PSMs exceeds the target reserves level, it is considered MGV instead of reserve capital and eligible for allocation by VCON holders. Likewise, when the reserves are depleted, a rebalance can be triggered to move capital out of the market governance venues. The MGV is calculated as PCV - reserves.
+The remainder of protocol assets outside the reserves can be controlled by VCON market governance to earn yield. VOLT holders can also redeem directly against liquid non-reserve assets so long as the [daily redemption limit](#rate-limits) has not been exceeded. When the capital in the PSMs exceeds the target reserves level, it becomes eligible for allocation by VCON holders. Likewise, when the reserves are depleted, a rebalance can be triggered to move capital out of the market governance venues.
 
 ## System Surplus
-Sometimes called the “surplus buffer”, this is defined as the total PCV minus the value of all circulating VOLT. The system surplus is not a separate bucket or specifically distributed in either the reserves or the market-governed value. It is the “equity” of the protocol, originating from VCON holders who add capital to the system in exchange for VCON tokens, or accrued from system fees.
+Sometimes called the “surplus buffer”, this is defined as the total PCV minus the value of all circulating VOLT. The system surplus is not a separate bucket or specifically distributed in either the reserves or the capital allocated by market governance. It is the “equity” of the protocol, originating from VCON holders who add capital to the system in exchange for VCON tokens, or accrued from system fees.
 
 The system surplus is significant in determining certain rates within the system. When the surplus is large vs the total PCV, a higher rate is paid to VOLT holders, and vice versa. Likewise, when the surplus is large vs the total PCV, the size of the reserves can shrink, and vice versa.
 
@@ -169,7 +174,7 @@ The profit split for VCON holders is calculated according to a similar equation 
 # Market Governance
 
 ## VCON Voting Power
-VCON holders can direct the [market governed value](#market-governed-value), with the right to do so divided evenly among the portion of VCON staked in market governance. VCON holders who do not participate in market governance implicitly delegate their voting power to those who do. Therefore, there is no explicit restriction on the share of the MGV a given VCON holder can borrow, so long as that MGV is currently idle. If only one VCON holder participates in market governance, they can direct the entirety of the MGV.
+VCON holders can direct the protocol assets excluding the [reserves](#reserves), with the right to do so divided evenly among the portion of VCON staked in market governance. VCON holders who do not participate in market governance implicitly delegate their voting power to those who do. Therefore, there is no explicit restriction on the share of the MGV a given VCON holder can borrow, so long as that MGV is currently idle. If only one VCON holder participates in market governance, they can direct the entirety of the MGV.
 
 VCON holders can always rebalance among themselves to an equal pro rata share of MGV. If a VCON holder is currently borrowing more than their pro rata share, any other VCON holder with less than their pro rata share can trigger a rebalance to their own benefit. If one holder was directing the entire MGV, another holder who stakes an equal VCON share could trigger a rebalance to gain control over half of the MGV. There may be a nominal fee on the rebalance to prevent griefing.
 
@@ -260,6 +265,9 @@ Another k, this constant is similar to the above and determines how sensitive th
 ## Auction parameters
 What portion of the VCON supply can be sold in a given auction to grow the surplus buffer, and the maximum frequency of these auctions, are important questions for the growth of Volt Protocol. It is difficult to determine how decision making about VCON emission can be performed purely through market governance at this stage. A later implementation may attempt to allow market governance to control the frequency and size of VCON auction.
 
+## PSM Allocations
+How much VOLT is mint/redeemable on which layer must be decided by governance. In general, no more than 10% of the VOLT supply should be minted through a single L2 PSM.
+
 # VCON Economics
 
 ## VCON Auction
@@ -268,11 +276,16 @@ Merely accumulating the surplus buffer from system fees constrains expansion. VC
 ## Ragequit
 VCON holders can “ragequit” in exchange for a pro rata share of the surplus buffer less a redemption fee. This allows capital to exit the system when the surplus buffer is too large relative to the PCV, if the system were to become defunct, or if they judge their fellow VCON holders to be taking unacceptable risks in governance. The process is rate limited so VOLT holders can react to fluctuations in the size of the surplus buffer.
 
+VCON holders can only ragequit so long as the surplus buffer is above a target ratio determined by governance, which signfies low demand to hold VOLT vs the amount of capital in the system. When the surplus buffer is low, ragequit will be blocked to ensure VOLT holders remain protected.
+
 # vETH
 Market governance can be applied to alternative denominations of capital besides USD. The same infrastructure that will govern VOLT can be extended to support vETH, a market governed ETH-denominated currency. Other “fiat” denominations are also possible, if there is on chain holder demand to support tokenization. Supporting multiple capital types will enable efficiency gains in lending, borrowing, and exchange. There are several advantages to including an ETH derivative in the VOLT system. The same market governance codebase can support allocation of ETH or its derivatives into yield venues, or even conduct Rocket Pool-esque decentralized staking. Volt Protocol can internalize borrow aggregation and peer to peer matching functions in the future, such as allowing vETH holders to borrow in stablecoins at whichever is lowest among the VOLT rate or the whitelisted yield venues.
 
 # Checks and Balances
-Profit motive for VCON holders alone is insufficient to ensure certain protocol functions are performed correctly from the perspective of VOLT holders. To prevent abuses, checks and balances will be added outside of market governance. Most prominent among these are the two “Nope DAOs”, mechanisms by which VOLT or VCON holders can veto system changes. This applies to any governance action, such as parameter adjustments or onboarding of new yield venues. Different quorum thresholds may be used for different types of changes.
+Profit motive for VCON holders alone is insufficient to ensure certain protocol functions are performed correctly from the perspective of VOLT holders. To prevent abuses, checks and balances will be added outside of market governance. Most prominent among these are the two Veto Modules, mechanisms by which VOLT or VCON holders can veto system changes. This applies to any governance action, such as parameter adjustments or onboarding of new yield venues. Different quorum thresholds may be used for different types of changes.
+
+## Optimistic Governance
+While the Volt Protocol market governance system is in its early stages, it's not realistic to expect VOLT and VCON holders to take an active role in its ongoing development. However, it is essential that they have the right to dissent against harmful changes by the core team. We will accomplish this with optimistic timelocks where the core contributors can propose system changes, but VOLT and VCON holders are both (separately) capable of veto. VCON holders will also receive proposer rights.
 
 ## VOLT Veto Module
 An appropriate quorum of the VOLT supply will be able to veto any governance proposal, with the veto threshold determinable by governance. Delegation will be important for this system, as the majority of stablecoin holders cannot be expected to pay active attention to governance changes. The goal of the Veto Module is that an active minority defending their own interests will benefit the collective.
@@ -282,3 +295,26 @@ Similar to the VOLT Veto Module, the implication of the VCON Veto Module is that
 
 ## Timelocks
 The principle risk of the Veto Module is that deadlock is produced. To mitigate this, Volt Protocol governance will use timelocks with different proposal durations, quorum thresholds, and veto requirements. A three day timelock might need only 1% of the VOLT supply to veto, but 10% of the VCON supply to submit a proposal, while a one month timelock needs only 1% of the VCON supply to submit a proposal, but requires 10% of the VOLT supply to veto.
+
+# MVP Constraints
+This document outlines a complicated system that will be a substantial engineering effort to complete safely. A simpler intermediate model is being developed. This model has the following restraints that make it more feasible to implement over a two to three month timeline:
+
+* the VCON governance token will not be transferable, and thus not subject to liquidations in market governance
+* market governance participants will receive VCON rewards, not cash (all excess yield to the surplus buffer)
+* there will be neither VCON auctions nor VCON redemption (ragequit)
+* the system accounting and yield oracles cannot directly account for losses -- in the event of a loss in a yield venue, the PCV Guard will withdraw protocol assets to the Governor, and Governance must make any accounting changes needed in the venues
+
+# Cross Chain
+The Volt Protocol cross-layer mechanisms will emphasize simplicity.
+
+VOLT is currently available on both Abritrum One and Ethereum mainnet. In principle VOLT minting and redemption can be performed on any chain; in practice it will be restricted to trustless Layer Two networks on Ethereum (or those well on their way to trustlessness). Volt Protocol will NOT deploy PCV into any non-L1 yield venues in the initial version, as this adds unreasonable complexity to PCV and yield accounting.
+
+## Liquidity Management
+When a Peg Stability Module on a given L2 is above its target reserves by a certain threshold, a permissionless autotask will remove idle funds to L1 for market governance to allocate. This does not require any cross chain state observations, simply a transfer of stablecoins from L2 to L1. The total amount of funds moved from L2 to L1 is tracked in an accumulator.
+
+When a Peg Stability Module on a given L2 is below its target reserves by a certain threshold, a permissionless autotask will send funds from L1 to refill the L2 PSM. This does not require any cross chain state observations, as the maximum amount of funds to send will be limited to what was previously sent. There will also be rate limits for movement of funds in either direction to further reduce risk.
+
+This minimal system that does not involve complex cross chain state observations or communication will allow for robust usage of VOLT on multiple layers.
+
+## Rate and Price Uniformity
+When the VOLT rate is updated on L2, it will read in the L1 VOLT rate and normalize the VOLT price. This means that although it's possible for a small deviation to occur in L2 and L1 VOLT price if the L1 rate is updated before the L2 price, it will shortly be normalized. In the worst case scenario of Arbitrum downtime that coincides with the VOLT rate update, it is highly unlikely that the system would experience more than a 0.006% deviation before a correction occurred (assuming a VOLT rate update of +-2%, and a full day of Arbitrum downtime).
