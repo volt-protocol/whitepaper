@@ -41,6 +41,9 @@
 [Market Module](#market-module)
 
 [Checks and Balances](#checks-and-balances)
+* [VOLT Veto Module](#volt-veto-module)
+* [VCON Veto Module](#vcon-veto-module)
+* [Timelocks](#timelocks)
 
 [Consensus Parameters](#consensus-parameters)
 * [Target Surplus Ratio](#target-surplus-buffer-ratio)
@@ -272,7 +275,10 @@ Market governance can be applied to alternative denominations of capital besides
 Profit motive for VCON holders alone is insufficient to ensure certain protocol functions are performed correctly from the perspective of VOLT holders. To prevent abuses, checks and balances will be added outside of market governance. Most prominent among these are the two “Nope DAOs”, mechanisms by which VOLT or VCON holders can veto system changes. This applies to any governance action, such as parameter adjustments or onboarding of new yield venues. Different quorum thresholds may be used for different types of changes.
 
 ## VOLT Veto Module
-A quorum of XX% of the VOLT supply will be able to veto any governance proposal, with the veto threshold proportional to the portion of the VCON supply voting in favor. These proportions can be adjusted by governance. 1% of the VOLT supply shouldn’t be able to overrule 90% VCON consensus, but 1% of the VOLT supply stopping a minimal VCON quorum from pushing through a change might be fair.
+An appropriate quorum of the VOLT supply will be able to veto any governance proposal, with the veto threshold determinable by governance. Delegation will be important for this system, as the majority of stablecoin holders cannot be expected to pay active attention to governance changes. The goal of the Veto Module is that an active minority defending their own interests will benefit the collective.
 
 ## VCON Veto Module
-A minority of XX% of the VCON supply can veto a proposal passed by a larger VCON majority. This means that a small quorum can pass uncontroversial proposals, but larger participation is needed if there are dissenters.
+Similar to the VOLT Veto Module, the implication of the VCON Veto Module is that it is easier to block a governance change than to pass one. A small minority may be able to pass a change if no one dissents, while it might take an absolute majority to push a change against the wishes of a dissenting minority.
+
+## Timelocks
+The principle risk of the Veto Module is that deadlock is produced. To mitigate this, Volt Protocol governance will use timelocks with different proposal durations, quorum thresholds, and veto requirements. A three day timelock might need only 1% of the VOLT supply to veto, but 10% of the VCON supply to submit a proposal, while a one month timelock needs only 1% of the VCON supply to submit a proposal, but requires 10% of the VOLT supply to veto.
