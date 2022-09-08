@@ -193,7 +193,7 @@ A VCON holder can modify their position by withdrawing funds from their chosen v
 VCON holders can delegate their market governance power to other accounts. To be eligible as a delegate, an account must opt in. As part of this, the new delegate can set their desired fee split, and choose whether or not to enforce a delegator whitelist. A VCON delegator can choose to remove their delegation at any time, converting back into a standard VCON position which can be repaid and closed out if the underlying funds were in a liquid venue.
 
 ## VCON Holder Liquidation
-If PCV is illiquid (or in the case that losses were taken in a yield venue), either a Guardian or, in the future VOLT/VCON bonder can trigger a “margin call” or “gib” on VCON holders. If they do not return the loan within a predetermined period of time, their VCON is burnt and the system surplus absorbs any losses. Since it may not be possible to immediately and trustlessly tabulate losses on chain, the loss can initially be marked down to zero and liquidation proceeded through another mechanism.
+If PCV is illiquid (or in the case that losses were taken in a yield venue), either a Guardian or, in the future VOLT/VCON bonder can trigger a “margin call” or “gib” on VCON holders. If they do not return the loan within a predetermined period of time, their VCON is burnt and the system surplus absorbs any losses. Since it may not be possible to immediately and trustlessly tabulate losses on chain, the loss can initially be marked down to zero and liquidation can proceed through another mechanism.
 
 There is no partial liquidation for VCON holders – if the loss in the underlying venue is less than the value of their VCON, it is their responsibility to restore the PCV.
 
