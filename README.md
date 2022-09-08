@@ -246,7 +246,7 @@ When there is no participation in market governance, all PCV defaults to the Bas
 The base venue is liquid and should have no fee for VOLT holders who wish to redeem directly, vs market governance which may have a nominal fee to prevent griefing.
 
 ## Internal Yield Venues
-Besides external yield venues, Volt Protocol is likely to develop its own lending markets and yield strategies to allow for ever more customizable risk and return strategies for VCON market governance. An example would be a native market for lending against ETH, where users can always access the best borrowing rate among Volt Protocol and its supported venues, and without any other long tail assets that add risk for the protocol.
+Besides external yield venues, Volt Protocol is likely to develop its own lending markets and yield strategies to allow for ever more customizable risk and return strategies for VCON market governance. An example would be a native market for lending against a single asset, ETH. This market gives users access to the best borrowing rate among Volt Protocol and its supported venues. Having only a single super liquid collateral asset greatly reduces risk, and no long tail assets will ever be added as collateral.
 
 # Market Module
 Besides deposits of DAI or USDC into frictionless venues like Compound, most strategies for market governance will face slippage when funds are reallocated between venues. This either introduces griefing risk or imposes costs on VCON holders. The market module is a (partial) solution, allowing swaps between stablecoins or dollar-denominated yield products at low, no, or even negative swap costs to the Volt system.
