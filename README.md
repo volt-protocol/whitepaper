@@ -315,7 +315,7 @@ This document outlines a complicated system that will be a substantial engineeri
 # Cross Chain
 The Volt Protocol cross-layer mechanisms will emphasize simplicity.
 
-VOLT is currently available on both Abritrum One and Ethereum mainnet. In principle VOLT minting and redemption can be performed on any chain; in practice it will be restricted to trustless Layer Two networks on Ethereum (or those well on their way to trustlessness). Volt Protocol will NOT deploy PCV into any non-L1 yield venues in the initial version, as this adds unreasonable complexity to PCV and yield accounting.
+VOLT is currently available on both Arbitrum Nitro and Ethereum mainnet. In principle VOLT minting and redemption can be performed on any chain; in practice it will be restricted to trustless Layer Two networks on Ethereum (or those well on their way to trustlessness). Volt Protocol will NOT deploy PCV into any non-L1 yield venues in the initial version, as this adds unreasonable complexity to PCV and yield accounting.
 
 ## Liquidity Management
 When a Peg Stability Module on a given L2 is above its target reserves by a certain threshold, a permissionless autotask will remove idle funds to L1 for market governance to allocate. This does not require any cross chain state observations, simply a transfer of stablecoins from L2 to L1. The total amount of funds moved from L2 to L1 is tracked in an accumulator.
