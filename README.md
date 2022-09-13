@@ -3,9 +3,9 @@ Volt Protocol is an interest bearing digital currency or blockchain savings acco
 
 The central premise of VOLT is that system parameters should be governed by market forces rather than votes wherever possible, and protected by checks and balances otherwise.
 
-
+# Contents
 <details>
-<summary>Contents</summary>
+<summary></summary>
 
 [Motivation](#motivation)
 
