@@ -1,4 +1,8 @@
 # ⚡VOLT⚡
+Volt Protocol is an interest bearing digital currency or blockchain savings account built on Ethereum and powered by a novel market governance infrastructure.
+
+The central premise of VOLT is that system parameters should be governed by market forces rather than votes wherever possible, and protected by checks and balances otherwise.
+
 
 <details>
 <summary>Contents</summary>
@@ -72,7 +76,22 @@
 
 ---------------
 
-# Overview
+# Motivation
+Banks accept deposits of currency and use them to make loans of varied durations and kinds. Banks offer yield on deposits which is lower than that they earn lending, and profit by the spread. A bank's business is to ensure a good match between the time and yield preferences of its depositors and the composition of its loan book. When they fail to do so, a bank run is the natural result.
+
+There are three main problems with banks today --
+1) they require substantial trust in the operators of the bank
+2) crippling overregulation degrades the user experience
+3) they are vulnerable to censorship or seizure of funds
+
+These problems are closely related. The solution is a trust-minimized system implemented in smart contracts, which can simultaneously obviate the need for trusted human operators, eliminate central points of failure that are vulnerable to censorship, and be trusted by the public thanks to rules encoded more reliably than any legal proction could be.
+
+# Yield Bearing Digital Cash
+The related concepts of cash, banknotes, checkable deposit accounts, and money market accounts are distinct by a combination of real past technical limitations, legal whim, and historical accident. There is no deep logical reason why notes that are transferrable peer to peer freely cannot also earn interest. There were very real limitations on peer to peer checking, as both parties needed their own banking intermediary prior to the advent of cryptocurrency. There is no good reason that a separation should be enforced between checking and savings accounts.
+
+Smart contracts make it possible to combine all these functions into one whole -- an electronic note that is redeemable on demand, steadily accrues interest, and is freely transferrable between individuals across any jurisdictions. And what's more, composable into any kind of other financial contract or instrument without requiring permission from the issuer.
+
+# Market Governance Overview
 Market governance seeks to create a crypto economic incentive aligned system balancing supply and demand between capital suppliers and capital allocators. Users supply capital in the form of VOLT, and the protocol adjusts the VOLT rate to manage liquidity and reach an efficient market equilibrium.
 
 VCON holders make risk decisions through liquid allocation of capital and are exposed to the associated risk and return. Allocation into venues that suffer losses or underperform versus the VOLT rate for a sustained period of time will be subject to liquidation. Profits are split between the system surplus and the VCON allocators based on utilization.
