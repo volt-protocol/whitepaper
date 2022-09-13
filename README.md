@@ -84,9 +84,9 @@ The central premise of VOLT is that system parameters should be governed by mark
 Banks accept deposits of currency and use them to make loans of varied durations and kinds. Banks offer yield on deposits which is lower than that they earn lending, and profit by the spread. A bank's business is to ensure a good match between the time and yield preferences of its depositors and the composition of its loan book. When they fail to do so, a bank run is the natural result.
 
 There are three main problems with banks today --
-1) they require substantial trust in the operators of the bank
-2) crippling overregulation degrades the user experience
-3) they are vulnerable to censorship or seizure of funds
+* they require substantial trust in the operators of the bank
+* crippling overregulation degrades the user experience, effectively taxing all savers
+* they are vulnerable to censorship or seizure of funds
 
 These problems are closely related. The solution is a trust-minimized system implemented in smart contracts, which can simultaneously obviate the need for trusted human operators, eliminate central points of failure that are vulnerable to censorship, and be trusted by the public thanks to rules encoded more reliably than any legal proction could be.
 
@@ -94,6 +94,26 @@ These problems are closely related. The solution is a trust-minimized system imp
 The related concepts of cash, banknotes, checkable deposit accounts, and money market accounts are distinct by a combination of real past technical limitations, legal whim, and historical accident. There is no deep logical reason why notes that are transferrable peer to peer freely cannot also earn interest. There were very real limitations on peer to peer checking, as both parties needed their own banking intermediary prior to the advent of cryptocurrency. There is no good reason that a separation should be enforced between checking and savings accounts.
 
 Smart contracts make it possible to combine all these functions into one whole -- an electronic note that is redeemable on demand, steadily accrues interest, and is freely transferrable between individuals across any jurisdictions. And what's more, composable into any kind of other financial contract or instrument without requiring permission from the issuer.
+
+# Current Implementations and their Problems
+
+## Centralized stablecoins
+Equivalent to a checking account that requires only an Ethereum address to use, centralized stablecoins are an excellent step forward but suffer many of the same issues as the traditional financial system. It is difficult for the average user to know the full details of their risk management, and impossible to prevent unwanted changes or outright censorship.
+
+Centralized stablecoins may offer yield products to KYC'd holders but not to the majority, effectively taxing all users and rewarding institutional or more sophisticated clients who onboard to the yield product.
+
+## Decentralized stablecoins
+True decentralized stablecoins such as DAI ensure users do not have to fear being individually targeted for censorship. Unexpected changes in the system risk are more difficult to perform than within a corporate issuer of a centralized stablecoin, and impossible to accomplish in secret. Stablecoin holders cannot prevent unwanted system changes, only exit.
+
+Decentralized stablecoins like DAI offer very little yield to users. Those that do generally rely on unsustainable token emissions schemes.
+
+## Lending markets
+To earn yield, centralized and decentralized stablecoins alike are deposited into lending markets like Compound. This allows users to access yield but forces them to take on liquidity risks. Also, the rates on these markets are volatile, so given a set of a few acceptable markets a user is not assured of getting the best rates without frequent rebalancing. This favors large users or collective management of funds. The same is true of emissions-based models whether they incentivize LP pairs or direct staking.
+
+## Yield vaults
+Yield vaults or aggregators seek to solve the problems small accounts face when using lending markets or other yield venues directly. However, current implementations have no mechanism to be credibly neutral at scale in terms of which venues are onboarded, and how much of the system capital is deposited into a given market at a given time. The incentive structure of yield aggregators encourages them to seek out the maximum possible yield irrespective of risk. Furthermore, users are still forced to choose a specific stablecoin denomination to deposit, when really all they want is a consistent risk-return on their dollars.
+
+Both lending markets and yield vaults today are highly vulnerable to bank runs in the event of losses, since there is no mechanism to fairly socialize losses among vault depositors in the event of bad debt occuring in the market. Sophisticated and responsive actors are the least likely to use, passive savers the most likely to take losses.
 
 # Market Governance Overview
 Market governance seeks to create a crypto economic incentive aligned system balancing supply and demand between capital suppliers and capital allocators. Users supply capital in the form of VOLT, and the protocol adjusts the VOLT rate to manage liquidity and reach an efficient market equilibrium.
@@ -103,6 +123,8 @@ VCON holders make risk decisions through liquid allocation of capital and are ex
 VOLT supply expansion and contraction is regulated by interest rate curves (similar to a Compound style market with a utilization curve) and a controller that adjusts this curve to find a market rate. The system will algorithmically determine the yield paid to VOLT holders to guide the system toward a target surplus buffer ratio decided by governance.
 
 Market governance is a control system, a set of feedback loops that connect the VOLT holders who are “lenders” to the system, and the VCON holders who are the “borrowers”. The following sections describe in detail how the system calculates interest rates, accounts for yield, and handles liquidations.
+
+In addition to market governance, checks and balances will be put in place throughout the Volt Protocol system to make sure all VOLT holders have the same protections even in the event of losses, and ensure they can defend their rights against unwanted system changes.
 
 # PCV Accounting
 The entirety of capital within the VOLT system is referred to as “protocol controlled value” or PCV. The PCV is broken down into two buckets.
