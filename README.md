@@ -7,7 +7,11 @@ The central premise of VOLT is that system parameters should be governed by mark
 <details>
 <summary>Contents</summary>
 
-[Overview](#overview)
+[Motivation](#motivation)
+
+[Yield Bearing Digital Cash](#yield-bearing-digital-cash)
+
+[Market Governance Overview](#market-governance-overview)
 
 [Accounting](#pcv-accounting)
 * [Reserves](#reserves)
