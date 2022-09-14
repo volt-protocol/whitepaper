@@ -11,6 +11,8 @@ The central premise of VOLT is that system parameters should be governed by mark
 
 [Yield Bearing Digital Cash](#yield-bearing-digital-cash)
 
+[Current Implementations and their Problems](#current-implementations-and-their-problems)
+
 [Market Governance Overview](#market-governance-overview)
 
 [Accounting](#pcv-accounting)
@@ -83,7 +85,7 @@ The central premise of VOLT is that system parameters should be governed by mark
 # Motivation
 Banks accept deposits of currency and use them to make loans of varied durations and kinds. Banks offer yield on deposits which is lower than that they earn lending, and profit by the spread. A bank's business is to ensure a good match between the time and yield preferences of its depositors and the composition of its loan book. When they fail to do so, a bank run is the natural result.
 
-There are three main problems with banks today --
+There are three main problems with banks and banklike systems today --
 * they require substantial trust in the operators of the bank
 * crippling overregulation degrades the user experience, effectively taxing all savers
 * they are vulnerable to censorship or seizure of funds
@@ -96,6 +98,7 @@ The related concepts of cash, banknotes, checkable deposit accounts, and money m
 Smart contracts make it possible to combine all these functions into one whole -- an electronic note that is redeemable on demand, steadily accrues interest, and is freely transferrable between individuals across any jurisdictions. And what's more, composable into any kind of other financial contract or instrument without requiring permission from the issuer.
 
 # Current Implementations and their Problems
+We must recongize that stablecoin issuers are banklike. This is not any kind of regulatory definition but a practical one. If he could be revived and made to understand the nuances of the blockchain and electronic money transfers, [Amschel Rothschild](https://en.wikipedia.org/wiki/Mayer_Amschel_Rothschild) would surely recognize MakerDAO as being in his own line of work. The point of smart contract systems built on a neutral consensus and execution layer is to remove the elements of human trust that were so crucial to private bankers in the past and that make today's banking system vulnerable to censorship and corruption. However, the economics of good banking remain the same, as do the general needs of users.
 
 ## Centralized stablecoins
 Equivalent to a checking account that requires only an Ethereum address to use, centralized stablecoins are an excellent step forward but suffer many of the same issues as the traditional financial system. It is difficult for the average user to know the full details of their risk management, and impossible to prevent unwanted changes or outright censorship.
