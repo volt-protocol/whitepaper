@@ -1,7 +1,9 @@
 # ⚡VOLT⚡
-Volt Protocol is an interest bearing digital currency or blockchain savings account built on Ethereum and powered by a novel market governance infrastructure.
+Volt Protocol is a decentralized savings and credit system built on Ethereum. VOLT is the USD-denominated yield bearing stablecoin.
 
 The central premise of VOLT is that system parameters should be governed by market forces rather than votes wherever possible, and protected by checks and balances otherwise.
+
+VOLT holders are lenders who earn the "VOLT rate", VCON holders are allocators who provide first loss capital and obtain leveraged exposure to yields.
 
 # Contents
 <details>
@@ -86,16 +88,16 @@ The central premise of VOLT is that system parameters should be governed by mark
 Banks accept deposits of currency and use them to make loans of varied durations and kinds. Banks offer yield on deposits which is lower than that they earn lending, and profit by the spread. A bank's business is to ensure a good match between the time and yield preferences of its depositors and the composition of its loan book. When they fail to do so, a bank run is the natural result.
 
 There are three main problems with banks and banklike systems today --
-* they require substantial trust in the operators of the bank
+* they require substantial trust in the operators of the bank (we saw the problems of this in the collapse of Celsius)
 * crippling overregulation degrades the user experience, effectively taxing all savers
 * they are vulnerable to censorship or seizure of funds
 
 These problems are closely related. The solution is a trust-minimized system implemented in smart contracts, which can simultaneously obviate the need for trusted human operators, eliminate central points of failure that are vulnerable to censorship, and be trusted by the public thanks to rules encoded more reliably than any legal proction could be.
 
 # Yield Bearing Digital Cash
-The related concepts of cash, banknotes, checkable deposit accounts, and money market accounts are distinct by a combination of real past technical limitations, legal whim, and historical accident. There is no deep logical reason why notes that are transferrable peer to peer freely cannot also earn interest. There were very real limitations on peer to peer checking, as both parties needed their own banking intermediary prior to the advent of cryptocurrency. There is no good reason that a separation should be enforced between checking and savings accounts.
+The related concepts of cash, banknotes, checkable deposits, and money market accounts are distinct by a combination of real past technical limitations, legal whim, and historical accident. There is no deep logical reason why notes that are transferrable peer to peer freely cannot also earn interest. There were very real limitations on peer to peer checking in the past, as both parties needed their own banking intermediary prior to the advent of cryptocurrency. There is no good reason that a separation should be enforced between checking and savings accounts today.
 
-Smart contracts make it possible to combine all these functions into one whole -- an electronic note that is redeemable on demand, steadily accrues interest, and is freely transferrable between individuals across any jurisdictions. And what's more, composable into any kind of other financial contract or instrument without requiring permission from the issuer.
+Smart contracts make it possible to combine all these functions into one whole -- an electronic note that is redeemable on demand, seizure resistant, interest bearing, and freely transferrable between individuals across any jurisdictions. And what's more, composable into any kind of other financial contract or instrument without requiring permission from the issuer.
 
 # Current Implementations and their Problems
 We must recongize that stablecoin issuers are banklike. This is not any kind of regulatory definition but a practical one. If he could be revived and made to understand the nuances of the blockchain and electronic money transfers, [Amschel Rothschild](https://en.wikipedia.org/wiki/Mayer_Amschel_Rothschild) would surely recognize MakerDAO as being in his own line of work. The point of smart contract systems built on a neutral consensus and execution layer is to remove the elements of human trust that were so crucial to private bankers in the past and that make today's banking system vulnerable to censorship and corruption. However, the economics of good banking remain the same, as do the general needs of users.
@@ -188,26 +190,17 @@ A VOLT holder can mint VOLT by depositing stablecoins or redeem for the same in 
 A limit is necessary on redemption through the PSM to ensure that losses in yield venues can be properly accounted for. If Volt Protocol took a loss in one of the PCV yield venues that exceeded the size of the surplus buffer, which would not be instantly knowable on chain (sentinels must report existence of bad debt positions to take action), sophisticated users could exit at the old, full target price. This occurs at the expense of less sophisticated users and is undesirable. A reasonable global rate limit on VOLT redemptions would allow all but the largest institutional users (ie, an exchange or major fund) to exit atomically, and keep the delay for these larger users down to a reasonable time for the loss liquidation auction or other mechanism to mark down the value of bad debt. This limit should never be set so low as to inconvenience users during healthy operation and can be adjusted based on market data. We can envision a market dynamic approach where when redemptions occur, the rate limit increases, and then decays when there is low redemption demand.
 
 # System Rates
-The following sections will describe the different interest rates and curves within the VOLT system, how they interact with each other, and how they are derived. It is critical to note that under market governance, interest rates are calculated in a control system with memory and feedback, not constant curves.
+The following sections will describe the different interest rates and curves within the VOLT system, how they interact with each other, and how they are derived. Under the final system, rates should be purely market based, including system memory and a controller. In the MVP, the system will resemble Compound with utilization based curves and an equilibrium value determined by governance.
 
 ## The VOLT Rate
 
-When there is no market governance activity, and the surplus buffer ratio is at target, the rate earned by VOLT holders is equal to the yield earned in the base yield venue according to a time weighted snapshot. The actual surplus buffer size is snapshotted as described in the Rate Checkpointing subsection.
+The baserate is defined as the VOLT rate when all system ratios are at target (surplus buffer to PCV ratio and liquid reserves ratios). Governance must determine these target values, as well as the baseline rate. For example, governance might determine that the optimal surplus buffer ratio is 10%, the optimal liquid reserves 50%, and a baserate of 2.5%.
 
-At a regular interval, when the surplus buffer is above or below the target ratio, the interest rate paid to VOLT holders is adjusted above or below the base yield venue rate. This means that when redemptions occur, the remaining VOLT holders will earn higher yield, and when supply expands quickly, yield per VOLT will decrease. Once the system returns to the target surplus buffer ratio, it will keep the newly discovered market rate for as long as it remains in balance.
+If the surplus buffer and liquid reserves are at target, the VOLT rate will be equal to the baserate, 2.5%.
 
-The interest rate VOLT holders receive is calculated as
+If more VOLT were minted such that the surplus buffer ratio reduced to 5%, the VOLT rate might reduce to 1.25%. If redemptions occurred such that the surplus buffer ratio was 20%, the VOLT rate might increase to 5%.
 
-`v = i * m * (r /t) ^ k`, where
-
-* `v`  is the actual rate paid to VOLT holders as well as the borrow cost for VCON holders. It is the system’s primary cost of capital for liquid deposits.
-* `i` is the yield of the “base yield venue” (which is described in the section with the same name), meaning the opportunity cost for capital assigned to market governance. This is the minimum yield paid to VOLT holders under conditions when the surplus buffer is at or above target.
-* `m` is the base yield pass through ratio, where m=1 means that exactly the full base venue yield is passed to the VOLT holder, m=0 means VOLT holders receive no yield, m of 10 means they earn 10x the base venue yield. Incremented up or down at regular intervals when the system is above or below the target surplus buffer. Remaining above the target surplus buffer for a long time will lead to a high m, and vice versa. As VOLT holders will never earn negative yield, m >= 0. 
-* `r` is the ratio between surplus buffer and the PCV, calculated based on a time weighted moving average as r = TWASB / TWAPCV, where [TWAPCV](#twapcv) is the time weighted average PCV, and [TWASB](#twasb) is the time weighted average surplus buffer
-* `t` is the target ratio between the surplus buffer and the PCV, a system constant set by governance
-* `k` is the sensitivity of the system to short term deviations from the target surplus buffer ratio. A k of zero means that VOLT holders receive a constant yield that never deviates from the base yield venue rate, a k of 1 means that the yield VOLT holders receive is 1:1 directly proportional to the level of deviation from the target yield rate, and a k of 1000 means the system is extremely sensitive to deviations from the target.
-
-When market governance is active, the yield earned, less the profit share with VCON holders, will be accounted for in the time weighted average yield snapshotting. The interest rate paid by VCON holders is expressed in the VOLT price, since they borrow and repay VOLT with no explicit fee outside of profit sharing.
+The baserate should be set based on the actual yield available in the integrated venues and observed market behavior. If the system remains too long above or below target surplus and reserves ratios, the baserate can be adjusted. At first this process will be manual, in a future version it can be turned over to a controller.
 
 # Market Governance Fee Split
 
